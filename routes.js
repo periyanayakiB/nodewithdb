@@ -1,28 +1,34 @@
 import express from "express";
-import { create, erase, read, update, auth, createTable, insertData, findData, deleteData  } from "./logics.js";
+import { createAddress, readAddress, updateAddress, deleteAddress, mid, createTable, findId, insertTable, deleteId, insertData, readData } from "./controller.js";
 
 export const router = express.Router();
 
-//read endpoint
-router.get("/read", auth, read);
+//create 
+router.post("/create", mid, createAddress);
 
-//update endpoint
-router.put("/update", auth, update);
+//read
+router.get("/read", mid, readAddress);
 
-//create endpoint
-router.post("/create", auth, create);
+//update
+router.put("/update", mid, updateAddress);
 
-//delete endpoint
-router.delete("/delete", auth, erase);
+//delete 
+router.delete("/erase", mid, deleteAddress);
 
-//createTable endpoint
-router.post("/createTable", createTable);
+//create table
+router.post('/createTable',createTable);
 
-//insertData endpoint
-router.post("/insertData", insertData);
+//find Id
+router.get('/findid/:id', findId);
 
-//updateData endpoint
-router.put("/findData/:id", findData);
+//insert table
+router.put('/insertTable',insertTable);
 
-//deleteData endpoint
-router.put("/deletData/:id", deleteData);
+//delete Id
+router.delete('/delete/:id',deleteId);
+
+//insert from request
+router.post('/insertData',insertData);
+
+//read 
+router.get('/readData',readData);

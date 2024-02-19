@@ -2,18 +2,19 @@
   "dependencies": {
     "express": "^4.18.2",
     "nodemon": "^3.0.3",
+    "package": "^1.0.1",
     "pg": "^8.11.3"
   },
-  "name": "nodewithdb",
-  "description": "node project with db",
+  "name": "nodejs-",
+  "description": "A complete nodejs project",
   "version": "1.0.0",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index",
+    "strat": "node index",
     "dev": "nodemon node index"
   },
-  "author": "",
+  "author": "periyanayakiB",
   "license": "ISC"
 }
